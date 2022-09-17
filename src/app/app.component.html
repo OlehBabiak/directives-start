@@ -23,8 +23,22 @@
           >{{ odd }}</li>
         </div>
       </ul>
+      <div class='take-color-wrapper'>
+        <div (click)="colorChoice('greenyellow')" class='take-color color1'></div>
+        <div (click)="colorChoice('#aaada6')" class='take-color color2'></div>
+        <div (click)="colorChoice('#2b40a9')" class='take-color color3'></div>
+        <div (click)="bGColorChoice('#ff2fc4')" class='take-color color4'></div>
+        <div (click)="bGColorChoice('#42efd2')" class='take-color color5'></div>
+        <div (click)="bGColorChoice('#8f43ee')" class='take-color color6'></div>
+      </div>
       <p appBasicHighlight>Style me with Basic directive!</p>
-      <p appBetterHighlight>Style me with better directive!</p>
+      <p
+        appBetterHighlight
+        [defaultColor]="'yellow'"
+        [defaultTextColor]="'grey'"
+        [highlightColor]="highColor"
+        [highlightTextColor]="highTextColor"
+      >Style me with better directive!</p>
     </div>
   </div>
 </div>

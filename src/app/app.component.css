@@ -5,3 +5,41 @@
 .odd{
   color: red;
 }
+
+.take-color-wrapper {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.take-color {
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.color1 {
+  background-color: greenyellow;
+}
+
+.color2 {
+  background-color: #aaada6;
+}
+
+.color3 {
+  background-color: #2b40a9;
+}
+
+.color4 {
+  background-color: #ff2fc4;
+}
+
+.color5 {
+  background-color: #42efd2;
+}
+
+.color6 {
+  background-color: #8f43ee;
+}

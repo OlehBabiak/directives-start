@@ -8,19 +8,27 @@
       </button>
       <br><br>
       <ul class="list-group">
+<!--        <div *ngIf='onlyOdd'>-->
+<!--          <li-->
+<!--            *ngFor='let even of evenNumbers'-->
+<!--            class="list-group-item"-->
+<!--            [ngStyle]="{backgroundColor: even % 2 === 0 ? 'green' : 'yellow'}"-->
+<!--          >{{ even }}</li>-->
+<!--        </div>-->
         <div *ngIf='onlyOdd'>
-          <li
-            *ngFor='let even of evenNumbers'
-            class="list-group-item"
-            [ngStyle]="{backgroundColor: even % 2 === 0 ? 'green' : 'yellow'}"
-          >{{ even }}</li>
-        </div>
-        <div *ngIf='!onlyOdd'>
           <li
             *ngFor='let odd of oddNumbers'
             [ngClass]='{odd: odd % 2 !== 0}'
             class="list-group-item"
           >{{ odd }}</li>
+        </div>
+        <div *appUnless='onlyOdd'>
+          <li
+            class="list-group-item"
+            [ngClass]='{odd: even % 2 !== 0}'
+            [ngStyle]="{backgroundColor: even % 2 === 0 ? 'green' : 'yellow'}"
+             *ngFor='let even of evenNumbers'>
+             {{ even }}</li>
         </div>
       </ul>
       <div class='take-color-wrapper'>
@@ -39,6 +47,12 @@
         [highlightColor]="highColor"
         [highlightTextColor]="highTextColor"
       >Style me with better directive!</p>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase='5'>Value is a 5</p>
+        <p *ngSwitchCase='10'>Value is a 10</p>
+        <p *ngSwitchCase='100'>Value is a 100</p>
+        <p *ngSwitchDefault>Value is a Default</p>
+      </div>
     </div>
   </div>
 </div>
